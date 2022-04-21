@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--解决idea thymeleaf 表达式模板报红波浪线-->
+<!--suppress ALL -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <link rel="shortcut icon" href="./favicon.ico" th:href="@{/static/favicon.ico}"/>
+    <script src="./login/login.js"></script>
+    <link href="./login/login.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="login_frame">
+    <p id="image_logo"><img src=""></p>
+    <form method="post" action="login.js">
+        <p>
+            <label class="label_input">账号</label>
+            <input type="text" id="username" placeholder="请输入账号" class="text_field"/>
+        </p>
+        <p>
+            <label class="label_input">密码</label>
+            <input type="text" id="password" placeholder="请输入密码" class="text_field"/>
+        </p>
+        <div id="login_control">
+            <input type="button" id="btn_login" value="登录" onclick="login();"/>
+            <a id="forget_pwd" href="forget_pwd.html">忘记密码？</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+spring:
+  profiles:
+    active: dev
+
+  #修改thymeleaf访问根目录
+  thymeleaf:
+    prefix: classpath:/view/

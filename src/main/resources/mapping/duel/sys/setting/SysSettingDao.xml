@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.duel.sys.setting.dao.SysSettingDao">
+
+    <resultMap id="SysSettingResultMap" type="com.duel.sys.setting.model.vo.SysSettingVo">
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="sys_name" jdbcType="VARCHAR" property="sysName" />
+        <result column="sys_logo" jdbcType="VARCHAR" property="sysLogo" />
+        <result column="sys_bottom_text" jdbcType="VARCHAR" property="sysBottomText" />
+        <result column="sys_notice_text" jdbcType="VARCHAR" property="sysNoticeText" />
+        <result column="create_time" jdbcType="VARCHAR" property="createTime" />
+        <result column="update_time" jdbcType="VARCHAR" property="updateTime" />
+        <result column="user_init_password" jdbcType="VARCHAR" property="userInitPassword" />
+        <result column="sys_color" jdbcType="VARCHAR" property="sysColor" />
+        <result column="sys_api_encrypt" jdbcType="VARCHAR" property="sysApiEncrypt" />
+        <result column="sys_open_api_limiter_encrypt" jdbcType="VARCHAR" property="sysOpenApiLimiterEncrypt" />
+        <result column="sys_check_pwd_encrypt" jdbcType="VARCHAR" property="sysCheckPwdEncrypt" />
+    </resultMap>
+
+    <sql id = "Sys_Setting_Column_List">
+        id, sys_name, sys_logo, sys_bottom_text, sys_notice_text, create_time, update_time, user_init_password
+        sys_color, sys_api_encrypt, sys_open_api_limiter_encrypt, sys_check_pwd_encrypt
+    </sql>
+
+    <select id="getSysSettingById" parameterType="String" resultMap="SysSettingResultMap">
+        select <include refid="Sys_Setting_Column_List"/> from sys_setting where id = #{id, jdbcType=VARCHAR}
+    </select>
+
+</mapper>
